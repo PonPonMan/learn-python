@@ -9,3 +9,5 @@ if 'Thomas' in d:
     print(d['Thomas'])
 else:
     print("%s not in dict" % 'Thomas')
+d.pop('Bob')
+print(d)
