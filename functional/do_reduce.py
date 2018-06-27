@@ -61,9 +61,8 @@ def str2float(str):
     def fn(x, y):
         return (x * 10 + y)
 
-    return reduce(fn, map(
-        str2num,
-        ss[0])) + reduce(fn, map(str2num, ss[1])) / pow(10, len(ss[1]))
+    return reduce(fn, map(str2num, ss[0]))
+    +reduce(fn, map(str2num, ss[1])) / pow(10, len(ss[1]))
 
 
 # 测试
