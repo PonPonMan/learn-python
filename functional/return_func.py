@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Closure 闭包
+
 
 def count():
     def f(j):
@@ -15,15 +17,31 @@ def count():
 f1, f2, f3 = count()
 print(f1(), f2(), f3())
 
-
 # 练习
+# def createCounter():
+#     count = 0
+
+#     def counter():
+#         nonlocal count
+#         count += 1
+#         return count
+
+#     return counter
+
+
+# 解法2
+def countGenerator():
+    n = 0
+    while True:
+        n += 1
+        yield n
+
+
 def createCounter():
-    count = 0
+    it = countGenerator()
 
     def counter():
-        nonlocal count
-        count += 1
-        return count
+        return next(it)
 
     return counter
 
